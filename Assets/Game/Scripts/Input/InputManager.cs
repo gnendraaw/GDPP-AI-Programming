@@ -5,6 +5,9 @@ using static GameInputAction;
 
 public class InputManager : MonoBehaviour, IPlayerActions
 {
+    public UnityEvent<Vector2> OnMoveInput;
+    public UnityEvent<bool> OnSprintInput;
+
     private GameInputAction _inputAction;
 
     private void Awake()
@@ -23,6 +26,15 @@ public class InputManager : MonoBehaviour, IPlayerActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        Debug.Log(context.ReadValue<Vector2>());
+        OnMoveInput?.Invoke(context.ReadValue<Vector2>());
+    }
+
+    public void OnSprint(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            OnSprintInput?.Invoke(true);
+
+        if (context.canceled)
+            OnSprintInput?.Invoke(false);
     }
 }

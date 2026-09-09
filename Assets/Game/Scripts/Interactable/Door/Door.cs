@@ -17,11 +17,11 @@ public class Door : MonoBehaviour, IInteractable
 
     public bool IsAnimating => _isAnimating;
     public string Name => _name;
-
+    
     protected Coroutine _animatingDoorCoroutine;
-
+    
     [ContextMenu("Interact Door")]
-    public void Interact()
+    public void Interact(PlayerCharacter character)
     {
         _isOpen = !_isOpen;
 

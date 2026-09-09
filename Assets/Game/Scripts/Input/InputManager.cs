@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour, IPlayerActions
 {
     public UnityEvent<Vector2> OnMoveInput;
     public UnityEvent<bool> OnSprintInput;
+    public UnityEvent OnInteractInput;
 
     private GameInputAction _inputAction;
 
@@ -21,7 +22,7 @@ public class InputManager : MonoBehaviour, IPlayerActions
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.performed)
-            Debug.Log("Interact");
+            OnInteractInput?.Invoke();
     }
 
     public void OnMove(InputAction.CallbackContext context)

@@ -11,6 +11,7 @@ public class PlayerCharacterMovement : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] private LayerMask _groundLayer;
 
+    public bool IsEnabled { get; private set; } = true;
     public bool IsSprint => _isSprint;
 
     private const float DEFAULT_Y_MOVE_DIRECTION = 0f;
@@ -36,6 +37,11 @@ public class PlayerCharacterMovement : MonoBehaviour
         Move();
     }
 
+    public void SetEnabled(bool value)
+    {
+        IsEnabled = value;
+    }
+
     public void SetMoveDirection(Vector2 inputDirection)
     {
         _moveDirection = new Vector3(inputDirection.x, DEFAULT_Y_MOVE_DIRECTION, inputDirection.y);
@@ -58,6 +64,8 @@ public class PlayerCharacterMovement : MonoBehaviour
 
     private void Move()
     {
+        if (!IsEnabled) return;
+        
         CalculateVelocityXZ();
         CalculateVelocityY();
 

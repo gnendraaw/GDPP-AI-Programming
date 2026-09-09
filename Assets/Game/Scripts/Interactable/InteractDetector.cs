@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class InteractDetector : MonoBehaviour
@@ -11,13 +10,21 @@ public class InteractDetector : MonoBehaviour
     private IInteractable _detectedInteractable;
     private bool _isInteracting;
 
+    public bool IsEnabled { get; private set; } = true;
+
     private void Update()
     {
         UpdateDetection();
     }
 
+    public void SetEnabled(bool value)
+    {
+        IsEnabled = value;
+    }
+
     public void Interact()
     {
+        if (!IsEnabled) return;
         if (_detectedInteractable == null) return;
         
         _detectedInteractable.Interact(_owner);

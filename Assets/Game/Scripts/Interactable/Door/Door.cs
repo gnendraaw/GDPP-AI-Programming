@@ -23,10 +23,17 @@ public class Door : MonoBehaviour, IInteractable
     [ContextMenu("Interact Door")]
     public void Interact(PlayerCharacter character)
     {
+        if (_isLocked)
+        {
+            bool hasKey = character.Inventory.CheckItem(_keyID);
+            if (!hasKey) return;
+            _isLocked = false;
+        }
+        
         _isOpen = !_isOpen;
-
         if (_isOpen) Open();
         else Close();
+        
     }
 
     public virtual void Open()

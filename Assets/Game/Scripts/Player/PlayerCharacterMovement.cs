@@ -11,6 +11,8 @@ public class PlayerCharacterMovement : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] private LayerMask _groundLayer;
 
+    public bool IsSprint => _isSprint;
+
     private const float DEFAULT_Y_MOVE_DIRECTION = 0f;
     private const float GROUND_CHECK_RADIUS = 0.5f;
     private const float RESET_VELOCITY_Y_VALUE = -2f;
@@ -88,7 +90,7 @@ public class PlayerCharacterMovement : MonoBehaviour
             _currentSpeed = 0;
         else
         {
-            _currentSpeed = Time.deltaTime * _acceleration * (_isSprint ? 1f : -1f) + _currentSpeed;
+            _currentSpeed += Time.deltaTime * _acceleration * (_isSprint ? 1f : -1f);
             _currentSpeed = Mathf.Clamp(_currentSpeed, _walkSpeed, _sprintSpeed);
         }
 

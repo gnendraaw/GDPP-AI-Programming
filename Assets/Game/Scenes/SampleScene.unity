@@ -695,6 +695,29 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &638014010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 35061563621278804, guid: 2c0aff1bd24cf644ab4eba3856e6ea0c, type: 3}
+  m_PrefabInstance: {fileID: 933745967}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &638014013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638014010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2123f0ee9f1f32848a2019e916674703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  OnItemPicked:
+    m_PersistentCalls:
+      m_Calls: []
+  _itemData:
+    ID: Key_001
+    Name: Door Key
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,7 +859,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 35061563621278804, guid: 2c0aff1bd24cf644ab4eba3856e6ea0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 638014013}
   m_SourcePrefab: {fileID: 100100000, guid: 2c0aff1bd24cf644ab4eba3856e6ea0c, type: 3}
 --- !u!1 &960211681 stripped
 GameObject:
@@ -886,6 +912,7 @@ GameObject:
   - component: {fileID: 962289774}
   - component: {fileID: 962289775}
   - component: {fileID: 962289776}
+  - component: {fileID: 962289777}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -953,6 +980,22 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &962289777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962289773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f454918771c62f48afaf850a363fe63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterStamina
+  _characterMovement: {fileID: 962289776}
+  _maxStamina: 100
+  _staminaRegenValue: 20
+  _sprintStaminaCost: 20
 --- !u!1001 &1101841079
 PrefabInstance:
   m_ObjectHideFlags: 0

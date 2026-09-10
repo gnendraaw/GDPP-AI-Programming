@@ -1,5 +1,8 @@
 using System;
+using System.Numerics;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class SightPerception : MonoBehaviour
 {
@@ -46,5 +49,22 @@ public class SightPerception : MonoBehaviour
         }
         
         return false;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (_eyePosition == null) return;
+        Gizmos.color = Color.red;
+
+        bool isSeeingTarget = CheckSight();
+        if (isSeeingTarget) Gizmos.color = Color.green;
+        
+        Gizmos.DrawWireSphere(_eyePosition.position, _viewDistance);
+
+        Vector3 left = Quaternion.Euler(Vector3.up * -1f * _viewAngle * 0.5f) * _eyePosition.forward;
+        Vector3 right = Quaternion.Euler(Vector3.up * _viewAngle * 0.5f) * _eyePosition.forward;
+        
+        Gizmos.DrawRay(_eyePosition.position, left * _viewDistance);
+        Gizmos.DrawRay(_eyePosition.position, right * _viewDistance);
     }
 }

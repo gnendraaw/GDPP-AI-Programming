@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.Behavior;
 using UnityEngine;
@@ -41,5 +42,12 @@ public class GhostAIController : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
         gameObject.SetActive(false);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (!collision.gameObject.CompareTag("Player")) return;
+        if (!collision.gameObject.TryGetComponent<PlayerCharacter>(out var player)) return;
+        player.Death();
     }
 }

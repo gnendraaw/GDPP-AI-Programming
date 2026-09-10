@@ -28,6 +28,11 @@ public class PlayerCharacter : MonoBehaviour
         Cursor.visible = false;
     }
 
+    public void Death()
+    {
+        Debug.Log("Player dead");
+    }
+
     public void SetIsHiding(bool value)
     {
         IsHiding = value;

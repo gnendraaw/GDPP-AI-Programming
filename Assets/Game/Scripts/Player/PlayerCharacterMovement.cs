@@ -50,6 +50,8 @@ public class PlayerCharacterMovement : MonoBehaviour
     public void SetSprint(bool value)
     {
         _isSprint = value;
+        if (_isSprint)
+            HUDManager.Instance.StaminaUI.SetVisible(true);
     }
 
     private void CheckIsGrounded()

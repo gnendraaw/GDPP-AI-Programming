@@ -1,8 +1,10 @@
-using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerCharacter : MonoBehaviour
 {
+    public UnityEvent OnDeath;
+    
     [SerializeField] private PlayerCharacterMovement _movement;
     [SerializeField] private PlayerCharacterStamina _stamina;
     [SerializeField] private InventoryManager _inventory;
@@ -30,7 +32,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public void Death()
     {
-        Debug.Log("Player dead");
+        OnDeath?.Invoke();
     }
 
     public void SetIsHiding(bool value)

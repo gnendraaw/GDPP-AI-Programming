@@ -316,8 +316,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: EXIT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 51245c2882c958c49a78124ed9e6f2ea, type: 2}
-  m_sharedMaterial: {fileID: 8325046631516540347, guid: 51245c2882c958c49a78124ed9e6f2ea, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d1be2abd0b601a44b80c36827dd69be1, type: 2}
+  m_sharedMaterial: {fileID: 7546630845482725407, guid: d1be2abd0b601a44b80c36827dd69be1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -437,7 +437,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 85018804}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1446207720}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &175679471
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,8 +515,8 @@ MonoBehaviour:
 
     SILENCE'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d1be2abd0b601a44b80c36827dd69be1, type: 2}
-  m_sharedMaterial: {fileID: 7546630845482725407, guid: d1be2abd0b601a44b80c36827dd69be1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 51245c2882c958c49a78124ed9e6f2ea, type: 2}
+  m_sharedMaterial: {fileID: 8325046631516540347, guid: 51245c2882c958c49a78124ed9e6f2ea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -541,7 +553,7 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -46.99
+  m_lineSpacing: -24
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -652,6 +664,50 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656265613}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1446207719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1446207721}
+  - component: {fileID: 1446207720}
+  m_Layer: 0
+  m_Name: SceneLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1446207720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446207719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9dbbae260eca140959b1c1ebaaac8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
+--- !u!4 &1446207721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446207719}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -826,8 +882,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: START GAME
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 51245c2882c958c49a78124ed9e6f2ea, type: 2}
-  m_sharedMaterial: {fileID: 8325046631516540347, guid: 51245c2882c958c49a78124ed9e6f2ea, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d1be2abd0b601a44b80c36827dd69be1, type: 2}
+  m_sharedMaterial: {fileID: 7546630845482725407, guid: d1be2abd0b601a44b80c36827dd69be1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -947,7 +1003,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2078308410}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1446207720}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: HauntedHouse-Testing
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2100831697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,3 +1226,4 @@ SceneRoots:
   - {fileID: 2100831699}
   - {fileID: 1624997367}
   - {fileID: 656265616}
+  - {fileID: 1446207721}

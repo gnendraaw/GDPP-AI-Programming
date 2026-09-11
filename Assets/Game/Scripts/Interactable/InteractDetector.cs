@@ -51,12 +51,21 @@ public class InteractDetector : MonoBehaviour
             _detectorDistance,
             _interactableLayer);
         
-        if (!isDetectingInteractable) return;
-        
-        IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
-        if (interactable == null) return;
+        if (!isDetectingInteractable)
+        {
+            HUDManager.Instance.InteractionInfoUI.SetText("");
+            HUDManager.Instance.InteractionInfoUI.SetVisible(false);
+            HUDManager.Instance.CrosshairImage.SetHighlight(false);
+            return;
+        }
+
+        if (!hit.collider.gameObject.TryGetComponent<IInteractable>(out var interactable))
+            return;
         
         _detectedInteractable = interactable;
+        HUDManager.Instance.InteractionInfoUI.SetText(_detectedInteractable.Name);
+        HUDManager.Instance.InteractionInfoUI.SetVisible(true);
+        HUDManager.Instance.CrosshairImage.SetHighlight(true);
     }
 
     private void OnDrawGizmosSelected()

@@ -8,6 +8,8 @@ public class SlidingDoor : Door
 
     public override void Open()
     {
+        base.Open();
+        
         if (_animatingDoorCoroutine != null)
             StopCoroutine(_animatingDoorCoroutine);
         _animatingDoorCoroutine = StartCoroutine(SlideDoor(openedDoorPosition));
@@ -15,6 +17,8 @@ public class SlidingDoor : Door
 
     public override void Close()
     {
+        base.Close();
+        
         if (_animatingDoorCoroutine != null)
             StopCoroutine(_animatingDoorCoroutine);
         _animatingDoorCoroutine = StartCoroutine(SlideDoor(closedDoorPosition));

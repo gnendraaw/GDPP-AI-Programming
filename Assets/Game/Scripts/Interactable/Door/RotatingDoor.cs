@@ -20,8 +20,6 @@ public class RotatingDoor : Door
         if (_animatingDoorCoroutine != null)
             StopCoroutine(_animatingDoorCoroutine);
         _animatingDoorCoroutine = StartCoroutine(RotateDoor(_closedAngle));
-
-        base.Close();
     }
 
     private IEnumerator RotateDoor(float targetAngle)
@@ -41,5 +39,6 @@ public class RotatingDoor : Door
 
         _doorTransform.localRotation = Quaternion.Euler(Vector3.up * targetAngle);
         _isAnimating = false;
+        OnDoorClosed?.Invoke();
     }
 }

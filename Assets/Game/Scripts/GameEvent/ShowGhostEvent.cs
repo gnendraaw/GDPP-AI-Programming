@@ -14,7 +14,7 @@ public class ShowGhostEvent : GameEventBase
     
     public override void Finish()
     {
-        if (!_destroyWhenFinished) Destroy(_ghost);
+        if (_destroyWhenFinished) Destroy(_ghost);
         base.Finish();
     }
 }

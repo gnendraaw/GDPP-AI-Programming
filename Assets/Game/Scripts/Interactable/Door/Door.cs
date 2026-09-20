@@ -5,6 +5,7 @@ public class Door : MonoBehaviour, IInteractable
 {
     public UnityEvent OnDoorOpened;
     public UnityEvent OnDoorClosed;
+    public UnityEvent OnDoorLocked;
 
     [SerializeField] protected Transform _doorTransform;
     [SerializeField] protected float _duration;
@@ -26,7 +27,13 @@ public class Door : MonoBehaviour, IInteractable
         if (_isLocked)
         {
             bool hasKey = character.Inventory.CheckItem(_keyID);
-            if (!hasKey) return;
+            
+            if (!hasKey)
+            {
+                OnDoorLocked?.Invoke();
+                return;
+            }
+            
             _isLocked = false;
         }
         
